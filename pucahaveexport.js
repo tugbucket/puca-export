@@ -2,6 +2,7 @@
 
   alert('Ready to export.\n'
     + 'This includes loading all your haves which may take some time.\n'
+    + ':D \n'
     + 'A download button will appear in the top left corenr of the screen when done.');
 
   var conditionMap = {
@@ -42,7 +43,6 @@
       }
 
     }
-	alert(cards);
     $cards.remove();
   };
 
