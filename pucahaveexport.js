@@ -75,7 +75,7 @@
       'z-index': 100
     }).text('Download .CSV').appendTo($('body'));
 	  
-	  	$('body').html(csv);
+alert(csv);
 
   };
 
