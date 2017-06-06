@@ -60,7 +60,7 @@
       var row = [quantity, quote(card.cardName), quote(card.setName), card.condition, card.language, card.isFoil, '', card.isTradable];
       csv.push(row.join(',') + '\n');
     }
-	$('body').html(csv);
+
 
     var blob = new Blob(csv, { type: 'text/csv' });
 
@@ -74,6 +74,8 @@
       top: '20px',
       'z-index': 100
     }).text('Download .CSV').appendTo($('body'));
+	  
+	  	$('body').html(csv);
 
   };
 
