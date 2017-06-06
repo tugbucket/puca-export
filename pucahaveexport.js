@@ -42,7 +42,7 @@
       }
 
     }
-
+	alert(cards);
     $cards.remove();
   };
 
@@ -75,7 +75,7 @@
       'z-index': 100
     }).text('Download .CSV').appendTo($('body'));
 	  
-alert(csv);
+
 
   };
 
