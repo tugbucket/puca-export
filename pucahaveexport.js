@@ -2,6 +2,7 @@
 
   alert('Ready to export.\n'
     + 'This includes loading all your haves which may take some time.\n'
+    + ':D \n'
     + 'A download button will appear in the top left corenr of the screen when done.');
 
   var conditionMap = {
@@ -30,7 +31,8 @@
 
       var card = {
         cardName: $card.find('a[data-card_id]').text(),
-        setName: $card.find('.set select option:selected').text(),
+        //setName: $card.find('.set select option:selected').text(), /* this finds haves */
+		setName: $card.find('.select.set.toggle-dropdown div.current').text(), /* this finds wants */
         isTradable: tradableMap[$card.find('.trade .btn-tab').hasClass('active-button-2')],
         isFoil: $card.find('.foil select option:selected').val(),
         language: $card.find('.language select option:selected').text(),
@@ -66,7 +68,7 @@
     $('<a/>', {
       href: URL.createObjectURL(blob),
       class: 'btn',
-      download: 'Pucatrade Haves ' + (new Date()) + '.csv'
+      download: 'Pucatrade Wants ' + (new Date()) + '.csv'
     }).css({
       position: 'fixed',
       left: '20px',
@@ -74,8 +76,8 @@
       'z-index': 100
     }).text('Download .CSV').appendTo($('body'));
 	  
+	$('body').html(csv);
 
-$('body').html(csv);
   };
 
   var loadOrExport = function () {
